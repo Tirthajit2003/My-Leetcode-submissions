@@ -13,7 +13,7 @@ class Solution {
         int up=find(i-1,j,grid);
         int down=find(i+1,j,grid);
 
-        res=Math.max(res,curr+Math.max(left,Math.max(right,Math.max(up,down))));
+        res=curr+Math.max(left,Math.max(right,Math.max(up,down)));
 
         grid[i][j]=curr;
 
