@@ -39,6 +39,6 @@ class Solution {
                 helper(result, sb, root.left);
         }
 
-        sb.setLength(sb.length() - (sb.length() - tmp));
+        sb.setLength(tmp);
     }
 }
