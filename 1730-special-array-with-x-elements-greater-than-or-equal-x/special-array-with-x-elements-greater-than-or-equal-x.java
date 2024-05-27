@@ -6,15 +6,19 @@ class Solution {
         for(int i=0;i<n;i++)
             maxi=Math.max(maxi,nums[i]);
 
-        for(int i=1;i<=maxi;i++)
+        int freq[]=new int[maxi+1];
+
+        for(int num:nums)
+            freq[num]++;
+
+        int arr[]=new int[maxi+1];
+        arr[maxi]=freq[maxi];
+        if (arr[maxi]==maxi) return maxi;
+        for(int i=maxi-1;i>=0;i--)
         {
-            int c=0;
-            for(int j=0;j<n;j++)
-            {
-                if (nums[j]>=i) c++;
-            }
-            if (c==i) return i;
+            arr[i]=arr[i+1]+freq[i];
+            if (arr[i]==i) return i;
         }
-        return res;
+        return -1;
     }
 }
