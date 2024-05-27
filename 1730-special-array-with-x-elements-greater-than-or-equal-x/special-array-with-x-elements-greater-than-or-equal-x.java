@@ -11,13 +11,14 @@ class Solution {
         for(int num:nums)
             freq[num]++;
 
-        int arr[]=new int[maxi+1];
-        arr[maxi]=freq[maxi];
-        if (arr[maxi]==maxi) return maxi;
+        // int arr[]=new int[maxi+1];
+        // arr[maxi]=freq[maxi];
+        int t=freq[maxi];
+        if (t==maxi) return maxi;
         for(int i=maxi-1;i>=0;i--)
         {
-            arr[i]=arr[i+1]+freq[i];
-            if (arr[i]==i) return i;
+            t=t+freq[i];
+            if (t==i) return i;
         }
         return -1;
     }
