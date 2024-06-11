@@ -6,14 +6,15 @@ class Solution {
         for(int i=0;i<m;i++)
             freq[arr1[i]]++;
 
-        List<Integer> l=new ArrayList<>();
+        int res[]=new int[m];
+        int j=0;
 
         for(int i=0;i<n;i++)
         {
             int curr=arr2[i];
             while(freq[curr]>0)
             {
-                l.add(curr);
+                res[j++]=curr;;
                 freq[curr]--;
             }
         }
@@ -21,15 +22,10 @@ class Solution {
         {
             while(freq[i]>0)
             {
-                l.add(i);
+                res[j++]=i;
                 freq[i]--;
             }
         }
-        int len=l.size();
-        int res[]=new int[len];
-
-        for(int i=0;i<len;i++)
-            res[i]=l.get(i);
 
         return res;
     }
